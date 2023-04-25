@@ -1,0 +1,78 @@
+
+package com.mycompany.mavenproject3;
+
+import java.util.Scanner;
+
+
+public class Mavenproject3 {
+
+
+    public static void main(String[] args) {
+    
+    System.out.println("COGON ELEMENTARY SCHOOL");
+    System.out.println("Zone 3, Cogon, El Salvador City \");
+    
+    System.out.println("Student ID - Student Name");
+    String[] students = {"Josh", "Vanne", "Mekuh"};
+    int student_count = students.length;
+    
+    for(int i =0;i<3;i++){
+        System.out.println((i+1) + " - " + students[i]);
+    }
+    System.out.print("\");
+    Scanner input = new Scanner(System.in);
+    
+    System.out.print("Please input student ID: ");
+    int student_id = input.nextInt();
+    if(student_id > 0 && student_id <= student_count){
+       String selected_student = students[student_id - 1];
+       System.out.println("You selected student " + selected_student);
+       
+     System.out.print("Please input Performance Task perfect score: ");
+     double perfect_pt_score = input.nextDouble();
+     
+     System.out.print("Please input Wuarterly Assessment perfect score: ");
+     double perfect_qa_score = input.nextDouble();
+     
+      System.out.print("Please input Written Works perfect score: ");
+     double perfect_ww_score = input.nextDouble();
+     
+    
+     System.out.print("Please enter Performance Task score:  ");
+     double pt_score = input.nextDouble();
+     
+     System.out.print("Please enter Quarterly Assessment score:  ");
+     double qa_score = input.nextDouble();
+     
+     System.out.print("Please enter Written Works score:  ");
+     double ww_score = input.nextDouble();
+     
+    double pt_total = ((pt_score / perfect_pt_score) * 100)* 0.40;
+    double qa_total = ((qa_score / perfect_qa_score) * 100)* 0.20;
+    double ww_total = ((ww_score / perfect_ww_score) * 100)* 0.40;
+    
+    double final_total = pt_total + qa_total + ww_total;
+    System.out.print(final_total);
+    
+         if (final_total >= 75){
+            System.out.print("Passed");
+         }
+         else {
+            System.out.print("Failed");
+         }
+    
+    
+    
+    }
+    else {
+          System.out.print("Student not found!");
+    }
+    
+    
+   
+    
+      
+      
+        
+    }
+}
